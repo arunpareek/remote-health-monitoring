@@ -1,0 +1,126 @@
+1. get authorisation code
+
+https://www.getpostman.com/oauth2/callback
+
+http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?response_type=code&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&APIName=OpenApiBP&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback
+
+https://app.getpostman.com/oauth2/callback?code=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L0zvGnmFvQ5Lr78DAy1trpWPdaxmPIZCC24r7xOsS0dRFq0u*Q0iKsuA3bVIKBIGqkV5ixyOV5CpMeIwgoC*JcO
+
+2. get access token
+http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?code=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L0zvGnmFvQ5Lr78DAy1trpWPdaxmPIZCC24r7xOsS0dRFq0u*Q0iKsuA3bVIKBIGqkV5ixyOV5CpMeIwgoC*JcO&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9
+
+http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?grant_type=authorization_code&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback
+
+{
+  "APIName": "OpenApiBP",
+  "AccessToken": "IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo",
+  "Expires": 172800,
+  "RefreshToken": "IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT3w3LISdtENAXNRnCV7I5ZbaHY1n*zXrZtOjpONhu4wxDKCQ*Y*anjmcPO2Dlk-bMuhwuue8X9WIMt*4JRDrK2bg",
+  "UserID": "cf4f0598329f406ba09766fb8256bb70",
+  "client_para": null
+}
+
+3. get bp reading
+
+http://sandboxapi.ihealthlabs.com/openapiv2/user/cf4f0598329f406ba09766fb8256bb70/bp.json/?redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6
+
+{
+  "BPDataList": [],
+  "BPUnit": 0,
+  "CurrentRecordCount": 0,
+  "NextPageUrl": "",
+  "PageLength": 50,
+  "PageNumber": 1,
+  "PrevPageUrl": "",
+  "RecordCount": 0
+}
+
+http://sandboxapi.ihealthlabs.com/openapiv2/application/bp.json/?redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6
+
+
+4. put bp data
+
+http://sandboxapi.ihealthlabs.com/openapiv2/user/cf4f0598329f406ba09766fb8256bb70/bp.json/?client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6&request_type=Post&querynumber=BP_ADD01
+
+does not work, sandbox doesnt allow push data
+
+
+REST Adapter config in ICS
+
+OAuth Autorization Code credentials
+client_id=1c86ad56a7d648ba8706d4dbad12b9eb
+client_secret=065c3bbf330a475894dfec3e0d09e2c9
+auth code uri: http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?APIName=OpenApiBP
+access tokent uri: http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/
+scope: all
+
+sc: 4B6DE833745E4F1B81B779764B7B1ECD
+sv: CCEF0EFD42084B64848EBF72D5B016F6
+
+https://integration-jcsdemo0046.integration.us2.oraclecloud.com/icsapis/agent/oauth/initoauth?client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&confirmoauth.client.secret=065c3bbf330a475894dfec3e0d09e2c9&auth_code_url=http%3A%2F%2Fsandboxapi.ihealthlabs.com%2FOpenApiV2%2FOAuthv2%2Fuserauthorization%2F%3FAPIName%3DOpenApiBP&access_token_url=http%3A%2F%2Fsandboxapi.ihealthlabs.com%2FOpenApiV2%2FOAuthv2%2Fuserauthorization%2F&scope=all&INSTANCE_ID=RXR_REST_01&plugin_id=rest
+
+https://integration-jcsdemo0046.integration.us2.oraclecloud.com/icsapis/agent/oauth/initoauth?scope=all&INSTANCE_ID=RXR_REST_01&plugin_id=rest
+
+https://integration-gse00002809.integration.us2.oraclecloud.com/icsapis/agent/oauth/callback
+
+https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+
+http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?response_type=code&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&APIName=OpenApiBP&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+
+----------------------------
+
+
+http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?response_type=code&client_id=cdc4aa2bbc6648a09f11a4313d43c509&APIName=OpenApiBP&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+
+-X GET  http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?code=$auth_code&grant_type=authorization_code&client_id=cdc4aa2bbc6648a09f11a4313d43c509&client_secret=f3dd737dbab54dbb84ff0db4e2ba3009&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+[aA]ccess[tT]oken
+[rR]efresh[tT]oken
+Bearer
+
+----------------------------
+
+https://api.ihealthlabs.com:8443/OpenApiV2/OAuthv2/userauthorization/?response_type=code&client_id=a2b2b1581dfc4a1aa8eacde1ff439441&APIName=OpenApiBP&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+-X GET  https://api.ihealthlabs.com:8443/OpenApiV2/OAuthv2/userauthorization/?code=$auth_code&grant_type=authorization_code&client_id=a2b2b1581dfc4a1aa8eacde1ff439441&client_secret=64951149bf2846e5b23020b87ca0e0ea&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+-X GET  https://api.ihealthlabs.com:8443/OpenApiV2/OAuthv2/userauthorization/?refresh_token=$refresh_token&response_type=refresh_token&client_id=a2b2b1581dfc4a1aa8eacde1ff439441&client_secret=64951149bf2846e5b23020b87ca0e0ea&UserID=87a370062ace417e892d81254344eaf3&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+https://api.ihealthlabs.com:8443/openapiv2/application/bp.json
+
+client_id: a2b2b1581dfc4a1aa8eacde1ff439441
+client_secret: 64951149bf2846e5b23020b87ca0e0ea
+SC: 3cecd8c7f92d4835a27bcabcca28e8e2 
+SV: 1ab27e19dd1f43b1be40d34a32fd6ddf
+
+/application/bp.json/?client_id=a2b2b1581dfc4a1aa8eacde1ff439441&client_secret=64951149bf2846e5b23020b87ca0e0ea&sc=3cecd8c7f92d4835a27bcabcca28e8e2&sv=1ab27e19dd1f43b1be40d34a32fd6ddf&START_TIME=1479387633&END_TIME=1479698628&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+
+code
+[aA]ccess[tT]oken
+[rR]efresh[tT]oken
+[eE]xpires
+
+
+code
+pUqGAfRtB*LKCO6*TtYthTgfHbsSare-HcX0Orhx1iXxeiJoIxP5se9g-hlpIs2lwtyDf9FqVmkNMyVNXf7hJxhhhLTFInHFCpIPjaae3e-r9iefjDOhQgakf52ypHKt9s*5TnOws8gdsppv9kUTgi-9ihtHTJ9gxb1IzpvSpsg
+
+Authorization: Basic YTJiMmIxNTgxZGZjNGExYWE4ZWFjZGUxZmY0Mzk0NDE6NjQ5NTExNDliZjI4NDZlNWIyMzAyMGI4N2NhMGUwZWE=
+
+JCS Version: 16.3.3.0.0 (160716.2301.0530)
+GSE Version: 16.4.1.0.0 (160924.1456.0623)
+
+
+
+https://api.ihealthlabs.com:8443/openapiv2/application/bp.json/?client_id=a2b2b1581dfc4a1aa8eacde1ff439441&client_secret=64951149bf2846e5b23020b87ca0e0ea&sc=3cecd8c7f92d4835a27bcabcca28e8e2&sv=1ab27e19dd1f43b1be40d34a32fd6ddf&access_token=pUqGAfRtB*LKCO6*TtYthTgfHbsSare-HcX0Orhx1iXxeiJoIxP5se9g-hlpIs2lwtyDf9FqVmkNMyVNXf7hJxhhhLTFInHFCpIPjaae3e-r9iefjDOhQgakf52ypHKt9s*5TnOws8gdsppv9kUTgi-9ihtHTJ9gxb1IzpvSpsg&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+
+
+https://ics-gse00003023.integration.us2.oraclecloud.com/integration/flowapi/rest/RXR_INTEGRATION_GET_BP01/v01/metadata
+
+https%3A%2F%2Fics-gse00003023.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback

@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "IoT-API",
+		"_postman_id": "3e713f38-64f9-89c9-ed74-695d5ed9e1a2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sendhealth-local",
+			"request": {
+				"url": "http://localhost:48484/iot/health",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"BPDataList\": [\r\n    {\r\n      \"BPL\": 1,\r\n      \"DataID\": \"662180d14cc9a10a676e8d6b532ea977\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 129,\r\n      \"HR\": 65,\r\n      \"IsArr\": 0,\r\n      \"LP\": 119,\r\n      \"LastChangeTime\": 1479434640,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479472440,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 2,\r\n      \"DataID\": \"bbe3adfac8e6a1cfeb67a5b3bc473d61\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 131,\r\n      \"HR\": 65,\r\n      \"IsArr\": 0,\r\n      \"LP\": 101,\r\n      \"LastChangeTime\": 1479435060,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479472860,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 3,\r\n      \"DataID\": \"1b49947ff2d600302cbc2261539c52b6\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 132,\r\n      \"HR\": 66,\r\n      \"IsArr\": 0,\r\n      \"LP\": 93,\r\n      \"LastChangeTime\": 1479435660,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479473460,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 3,\r\n      \"DataID\": \"b96b95cf14fc310089f34d5e964a4345\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 134,\r\n      \"HR\": 65,\r\n      \"IsArr\": 0,\r\n      \"LP\": 95,\r\n      \"LastChangeTime\": 1479436800,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479474600,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 4,\r\n      \"DataID\": \"6ea3566c89f43b9248134f8431e0885e\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 128,\r\n      \"HR\": 59,\r\n      \"IsArr\": 0,\r\n      \"LP\": 87,\r\n      \"LastChangeTime\": 1479691838,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479729616,\r\n      \"Note\": \"working\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 5,\r\n      \"DataID\": \"fa91a7f5a9a2ecb2ea652fa66468e412\",\r\n      \"DataSource\": \"Manual\",\r\n      \"HP\": 120,\r\n      \"HR\": 60,\r\n      \"IsArr\": 0,\r\n      \"LP\": 80,\r\n      \"LastChangeTime\": 1479698290,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479737841,\r\n      \"Note\": \"manual entry sunil\",\r\n      \"TimeZone\": \"+1100\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    }\r\n  ],\r\n  \"BPUnit\": 0,\r\n  \"CurrentRecordCount\": 6,\r\n  \"NextPageUrl\": \"\",\r\n  \"PageLength\": 50,\r\n  \"PageNumber\": 1,\r\n  \"PrevPageUrl\": \"\",\r\n  \"RecordCount\": 6\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sendhealth-cloud",
+			"request": {
+				"url": "https://rxr-iot-gse00003023.apaas.us6.oraclecloud.com/iot/health",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"BPDataList\": [\r\n    {\r\n      \"BPL\": 1,\r\n      \"DataID\": \"662180d14cc9a10a676e8d6b532ea977\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 129,\r\n      \"HR\": 65,\r\n      \"IsArr\": 0,\r\n      \"LP\": 119,\r\n      \"LastChangeTime\": 1479434640,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479472440,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 2,\r\n      \"DataID\": \"bbe3adfac8e6a1cfeb67a5b3bc473d61\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 131,\r\n      \"HR\": 65,\r\n      \"IsArr\": 0,\r\n      \"LP\": 101,\r\n      \"LastChangeTime\": 1479435060,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479472860,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 3,\r\n      \"DataID\": \"1b49947ff2d600302cbc2261539c52b6\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 132,\r\n      \"HR\": 66,\r\n      \"IsArr\": 0,\r\n      \"LP\": 93,\r\n      \"LastChangeTime\": 1479435660,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479473460,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 3,\r\n      \"DataID\": \"b96b95cf14fc310089f34d5e964a4345\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 134,\r\n      \"HR\": 65,\r\n      \"IsArr\": 0,\r\n      \"LP\": 95,\r\n      \"LastChangeTime\": 1479436800,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479474600,\r\n      \"Note\": \"\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 4,\r\n      \"DataID\": \"6ea3566c89f43b9248134f8431e0885e\",\r\n      \"DataSource\": \"FromDevice\",\r\n      \"HP\": 128,\r\n      \"HR\": 59,\r\n      \"IsArr\": 0,\r\n      \"LP\": 87,\r\n      \"LastChangeTime\": 1479691838,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479729616,\r\n      \"Note\": \"working\",\r\n      \"TimeZone\": \"+1050\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    },\r\n    {\r\n      \"BPL\": 5,\r\n      \"DataID\": \"fa91a7f5a9a2ecb2ea652fa66468e412\",\r\n      \"DataSource\": \"Manual\",\r\n      \"HP\": 120,\r\n      \"HR\": 60,\r\n      \"IsArr\": 0,\r\n      \"LP\": 80,\r\n      \"LastChangeTime\": 1479698290,\r\n      \"Lat\": 0,\r\n      \"Lon\": 0,\r\n      \"MDate\": 1479737841,\r\n      \"Note\": \"manual entry sunil\",\r\n      \"TimeZone\": \"+1100\",\r\n      \"userid\": \"87a370062ace417e892d81254344eaf3\"\r\n    }\r\n  ],\r\n  \"BPUnit\": 0,\r\n  \"CurrentRecordCount\": 6,\r\n  \"NextPageUrl\": \"\",\r\n  \"PageLength\": 50,\r\n  \"PageNumber\": 1,\r\n  \"PrevPageUrl\": \"\",\r\n  \"RecordCount\": 6\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sendalert_local",
+			"request": {
+				"url": "http://115.70.240.215:48484/iot/alert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n\t\t\"id\": \"3ebec8be-1911-4e66-89f6-8a721a1d4068\",\r\n\t\t\"clientId\": \"93aee622-0dbb-4cc4-9cb8-aba21bb96ef5\",\r\n\t\t\"source\": \"$UBSYS-2\",\r\n\t\t\"destination\": \"\",\r\n\t\t\"priority\": \"HIGHEST\",\r\n\t\t\"reliability\": \"BEST_EFFORT\",\r\n\t\t\"eventTime\": 1480244637609,\r\n\t\t\"sender\": \"\",\r\n\t\t\"type\": \"ALERT\",\r\n\t\t\"properties\": {},\r\n\t\t\"direction\": \"FROM_IOTCS\",\r\n\t\t\"receivedTime\": 1480244637609,\r\n\t\t\"sentTime\": 1480244637681,\r\n\t\t\"payload\": {\r\n\t\t\t\"format\": \"urn:oracle:iot:exploration:CriticalBloodPressure\",\r\n\t\t\t\"description\": \"Alert created from exploration\",\r\n\t\t\t\"severity\": \"CRITICAL\",\r\n\t\t\t\"data\": {\r\n\t\t\t\t\"$(source)_id\": \"$UBSYS-2\",\r\n\t\t\t\t\"msg_source\": \"AAAAAAR8RMSA-CA\",\r\n\t\t\t\t\"latitude\": -37.817,\r\n\t\t\t\t\"msg_destination\": \"\",\r\n\t\t\t\t\"msgid\": \"9227597d-4660-4e4a-bc8f-bf7a49b48923\",\r\n\t\t\t\t\"eventtime\": 1.48024463060499994E18,\r\n\t\t\t\t\"priority\": \"MEDIUM\",\r\n\t\t\t\t\"patientname\": \"Arun Pareek\",\r\n\t\t\t\t\"pressurehigh\": 190.0,\r\n\t\t\t\t\"pulse\": 50.0,\r\n\t\t\t\t\"patientage\": 32.0,\r\n\t\t\t\t\"patientgender\": \"Male\",\r\n\t\t\t\t\"source_id\": \"AAAAAAR8RMSA-CA\",\r\n\t\t\t\t\"pressurelow\": 70.0,\r\n\t\t\t\t\"msg_sender\": \"\",\r\n\t\t\t\t\"longitude\": 144.946\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sendalert_cloud",
+			"request": {
+				"url": "https://rxr-iot-gse00003023.apaas.us6.oraclecloud.com/iot/alert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n\t\t\"id\": \"3ebec8be-1911-4e66-89f6-8a721a1d4068\",\r\n\t\t\"clientId\": \"93aee622-0dbb-4cc4-9cb8-aba21bb96ef5\",\r\n\t\t\"source\": \"$UBSYS-2\",\r\n\t\t\"destination\": \"\",\r\n\t\t\"priority\": \"HIGHEST\",\r\n\t\t\"reliability\": \"BEST_EFFORT\",\r\n\t\t\"eventTime\": 1480244637609,\r\n\t\t\"sender\": \"\",\r\n\t\t\"type\": \"ALERT\",\r\n\t\t\"properties\": {},\r\n\t\t\"direction\": \"FROM_IOTCS\",\r\n\t\t\"receivedTime\": 1480244637609,\r\n\t\t\"sentTime\": 1480244637681,\r\n\t\t\"payload\": {\r\n\t\t\t\"format\": \"urn:oracle:iot:exploration:CriticalBloodPressure\",\r\n\t\t\t\"description\": \"Alert created from exploration\",\r\n\t\t\t\"severity\": \"CRITICAL\",\r\n\t\t\t\"data\": {\r\n\t\t\t\t\"$(source)_id\": \"$UBSYS-2\",\r\n\t\t\t\t\"msg_source\": \"AAAAAAR8RMSA-CA\",\r\n\t\t\t\t\"latitude\": -37.817,\r\n\t\t\t\t\"msg_destination\": \"\",\r\n\t\t\t\t\"msgid\": \"9227597d-4660-4e4a-bc8f-bf7a49b48923\",\r\n\t\t\t\t\"eventtime\": 1.48024463060499994E18,\r\n\t\t\t\t\"priority\": \"MEDIUM\",\r\n\t\t\t\t\"patientname\": \"Arun Pareek\",\r\n\t\t\t\t\"pressurehigh\": 190.0,\r\n\t\t\t\t\"pulse\": 50.0,\r\n\t\t\t\t\"patientage\": 32.0,\r\n\t\t\t\t\"patientgender\": \"Male\",\r\n\t\t\t\t\"source_id\": \"AAAAAAR8RMSA-CA\",\r\n\t\t\t\t\"pressurelow\": 70.0,\r\n\t\t\t\t\"msg_sender\": \"\",\r\n\t\t\t\t\"longitude\": 144.946\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sendproximity-local",
+			"request": {
+				"url": "http://localhost:48484/iot/proximity",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"patientId\":\"gareth.evans@rubiconred.com\",\r\n\t\"regionId\":\"B9407F30-F5F8-466E-AFF9-25556B57FE6D\",\r\n\t\"majorNumber\":65384,\r\n\t\"minorNumber\":38014,\r\n\t\"proximity\":\"near\",\r\n\t\"lat\":-34.9229055,\r\n\t\"long\":138.5586553,\r\n\t\"dateTime\":\"2016-11-28T21:42:00.000+09:30\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bp="http://rubiconred.com/bp/dm.hack.MyHealth" xmlns:td="http://rubiconred.com/dm.hack/MyHealth" targetNamespace="http://rubiconred.com/bp/dm.hack.MyHealth" elementFormDefault="qualified">
+	<xsd:import namespace="http://rubiconred.com/dm.hack/MyHealth" schemaLocation="dm.hack.MyHealth_1.0.xsd"/>
+	<xsd:element name="wellBeingDataRequest" type="bp:WellBeingDriveType">
+		<xsd:annotation>
+			<xsd:documentation>Element definition for the WellBeingDriveType type.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="wellBeingDataRequestResponse" type="bp:WellBeingDriveType">
+		<xsd:annotation>
+			<xsd:documentation>Element definition for the WellBeingDriveResponseType type.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="WellBeingDriveType">
+		<xsd:annotation>
+			<xsd:documentation>Type Definition for the wellBeingData operation.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="body">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="td:wellBeingData" minOccurs="0" maxOccurs="1"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

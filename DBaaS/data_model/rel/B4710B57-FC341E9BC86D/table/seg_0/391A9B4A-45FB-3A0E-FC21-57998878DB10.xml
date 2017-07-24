@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="391A9B4A-45FB-3A0E-FC21-57998878DB10" name="blood_pressure">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>F042F303-D651-01A1-E1B1-F6E0CDAB4824</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="reading_id" id="8DF12447-1E53-74CE-2D5C-C1044D115C4A">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>977BB0E9-DAFD-6D62-1DF4-129236FA93AB</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="systolic" id="711D1C4E-D92F-8E65-47BD-17DDF77BB3F8">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>48239005-7A27-ABA5-AF7B-B74AAED54C3B</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="diastolic" id="9A4FD697-2A9B-492E-EA3B-C63DFE55D992">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>DB0D5B29-04F8-6AF8-1421-509838D3DD07</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="heart_rate" id="28A8D083-E368-337D-62F9-510C05BAFE69">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>CD04BAAE-2855-5B00-7341-4464CEC30DC5</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="measured_dt" id="4EC2848A-DE42-DE07-8D19-776999E2B594">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>323AD6D0-E15E-368A-05EC-610252B5F5FD</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="measured_by" id="932C4873-1E81-0F2D-C150-84FEEF5F5358">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>EDDC4557-5561-B6F6-65E3-525650E5875C</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="patient_id" id="DCE3AACF-B48F-01B5-0347-07FF246FD6FA">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>76DF23BC-CE26-251A-62B6-1E02D57E832E</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C780D141-3EF0-1AA9-5FE5-7CF158D8BAB1" name="blood_pressure_PK">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:51:52 UTC</createdTime>
+<generatorID>B930E252-D2E9-B927-DDB7-9FC9BCD28FD8</generatorID>
+<ownerDesignName>data_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8DF12447-1E53-74CE-2D5C-C1044D115C4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

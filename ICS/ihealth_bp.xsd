@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ihealth.com"
+            targetNamespace="http://www.ihealth.com" elementFormDefault="qualified">
+  <xsd:element name="DownloadBPDataResultEntity">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="BPDataList">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="DownloadBPDataEntity" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="userid" type="xsd:string"/>
+                    <xsd:element name="BPL" type="xsd:integer"/>
+                    <xsd:element name="DataID" type="xsd:string"/>
+                    <xsd:element name="HP" type="xsd:integer"/>
+                    <xsd:element name="HR" type="xsd:integer"/>
+                    <xsd:element name="IsArr" type="xsd:integer"/>
+                    <xsd:element name="Lat" type="xsd:integer"/>
+                    <xsd:element name="Lon" type="xsd:integer"/>
+                    <xsd:element name="LP" type="xsd:integer"/>
+                    <xsd:element name="MDate" type="xsd:integer"/>
+                    <xsd:element name="Note" type="xsd:string"/>
+                    <xsd:element name="LastChangeTime" type="xsd:integer"/>
+                    <xsd:element name="DataSource" type="xsd:string"/>
+                    <xsd:element name="TimeZone" type="xsd:integer"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="BPUnit" type="xsd:integer"/>
+        <xsd:element name="CurrentRecordCount" type="xsd:integer"/>
+        <xsd:element name="NextPageUrl"/>
+        <xsd:element name="PageLength" type="xsd:integer"/>
+        <xsd:element name="PageNumber" type="xsd:integer"/>
+        <xsd:element name="PrevPageUrl"/>
+        <xsd:element name="RecordCount" type="xsd:integer"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

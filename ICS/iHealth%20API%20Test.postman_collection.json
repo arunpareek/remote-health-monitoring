@@ -1,0 +1,207 @@
+{
+	"variables": [],
+	"info": {
+		"name": "iHealth API Test",
+		"_postman_id": "28478605-a0df-67bc-85c6-bf8436822965",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_bp_application",
+			"request": {
+				"url": "https://api.ihealthlabs.com:8443/openapiv2/application/bp.xml/?redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=bfee0e8ef59f481596a4ffc788737704&client_secret=2c1e4ad1ea324c45a97c592ce1ceb9ae&sc=3cecd8c7f92d4835a27bcabcca28e8e2&sv=1ab27e19dd1f43b1be40d34a32fd6ddf&access_token=51Ja*rI0yWcTx-85HXOXVi*5ZlGK8lCzgId4LdT*2-GI6iazYMWCEshefHFGLOS-X*g17SRlDLIsh6MpsWx7Ba4tAcx6wICj9WNjzsQ4M2Q8rmFaddXFmnJWJwFs3k62kx0Sp3SuEaPUQnr1dRmSck1tMggX54T8MGQ3-v126mxyIA*4p0L-AFZBk4QRPATKHAxVMpPKl15resfsRHV5rw&START_TIME=1479387633&END_TIME=1479698628",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "e9e563a7-92a6-4f03-9827-7657b4f4a9b5",
+					"name": "ihealth data",
+					"originalRequest": {
+						"url": "https://api.ihealthlabs.com:8443/openapiv2/application/bp.json/?redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=bfee0e8ef59f481596a4ffc788737704&client_secret=2c1e4ad1ea324c45a97c592ce1ceb9ae&sc=3cecd8c7f92d4835a27bcabcca28e8e2&sv=1ab27e19dd1f43b1be40d34a32fd6ddf&access_token=51Ja*rI0yWcTx-85HXOXVi*5ZlGK8lCzgId4LdT*2-GI6iazYMWCEshefHFGLOS-X*g17SRlDLIsh6MpsWx7Ba4tAcx6wICj9WNjzsQ4M2Q8rmFaddXFmnJWJwFs3k62kx0Sp3SuEaPUQnr1dRmSck1tMggX54T8MGQ3-v126mxyIA*4p0L-AFZBk4QRPATKHAxVMpPKl15resfsRHV5rw",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "8096",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/Json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 21 Nov 2016 00:39:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Microsoft-IIS/7.5",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-AspNet-Version",
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 1209,
+					"body": "{\"BPDataList\":[{\"BPL\":5,\"DataID\":\"23fc4eb8d8e886b0ea70d91ccbcd7137\",\"DataSource\":\"FromDevice\",\"HP\":122,\"HR\":57,\"IsArr\":0,\"LP\":82,\"LastChangeTime\":1478655047,\"Lat\":0,\"Lon\":0,\"MDate\":1478692812,\"Note\":\"First test\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":5,\"DataID\":\"d5b101eaddf2c0600e60b569d89012db\",\"DataSource\":\"FromDevice\",\"HP\":122,\"HR\":70,\"IsArr\":0,\"LP\":77,\"LastChangeTime\":1478659529,\"Lat\":0,\"Lon\":0,\"MDate\":1478697310,\"Note\":\"after lunch\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":2,\"DataID\":\"a26696dadf220c93551341c5c5130676\",\"DataSource\":\"FromDevice\",\"HP\":152,\"HR\":108,\"IsArr\":0,\"LP\":102,\"LastChangeTime\":1478659643,\"Lat\":0,\"Lon\":0,\"MDate\":1478697421,\"Note\":\"tensing\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":2,\"DataID\":\"56e9a9be67f10d7efb4d1fc6b48496f7\",\"DataSource\":\"FromDevice\",\"HP\":127,\"HR\":71,\"IsArr\":0,\"LP\":100,\"LastChangeTime\":1478663119,\"Lat\":0,\"Lon\":0,\"MDate\":1478700868,\"Note\":\"Trump winning\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"82560a9a9cef386c91faaff99f2f0855\",\"DataSource\":\"FromDevice\",\"HP\":132,\"HR\":71,\"IsArr\":0,\"LP\":90,\"LastChangeTime\":1478665740,\"Lat\":0,\"Lon\":0,\"MDate\":1478703526,\"Note\":\"he's won\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"0dcfcd514996810e0b29f61c11e215a8\",\"DataSource\":\"FromDevice\",\"HP\":130,\"HR\":73,\"IsArr\":0,\"LP\":90,\"LastChangeTime\":1478665821,\"Lat\":0,\"Lon\":0,\"MDate\":1478703604,\"Note\":\"again\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"911dd5591362fefdf02a14a7bf7d479a\",\"DataSource\":\"FromDevice\",\"HP\":133,\"HR\":68,\"IsArr\":0,\"LP\":86,\"LastChangeTime\":1478727460,\"Lat\":0,\"Lon\":0,\"MDate\":1478765244,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":6,\"DataID\":\"8fb7a6e17570d5094ad90464a4ff3eca\",\"DataSource\":\"FromDevice\",\"HP\":112,\"HR\":60,\"IsArr\":0,\"LP\":77,\"LastChangeTime\":1478735537,\"Lat\":0,\"Lon\":0,\"MDate\":1478773323,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"b43775ff6d70bc6d8872c8592ba4b334\",\"DataSource\":\"FromDevice\",\"HP\":132,\"HR\":75,\"IsArr\":0,\"LP\":89,\"LastChangeTime\":1478749797,\"Lat\":0,\"Lon\":0,\"MDate\":1478787582,\"Note\":\"after lunch\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"b1cb0ac46b5c64b72b0d2d57c4f02bd6\",\"DataSource\":\"FromDevice\",\"HP\":137,\"HR\":62,\"IsArr\":0,\"LP\":83,\"LastChangeTime\":1478755643,\"Lat\":0,\"Lon\":0,\"MDate\":1478793398,\"Note\":\"testing\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"91eb1dc26139250ef956d6e9f8e73e5b\",\"DataSource\":\"FromDevice\",\"HP\":141,\"HR\":73,\"IsArr\":0,\"LP\":78,\"LastChangeTime\":1478815347,\"Lat\":0,\"Lon\":0,\"MDate\":1478853128,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"b646abc0f20a22981c55c6ad51354070\",\"DataSource\":\"FromDevice\",\"HP\":142,\"HR\":73,\"IsArr\":0,\"LP\":71,\"LastChangeTime\":1478815423,\"Lat\":0,\"Lon\":0,\"MDate\":1478853206,\"Note\":\"repeated Reading\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"169da6d6dfc8932d100b6a89835ca586\",\"DataSource\":\"FromDevice\",\"HP\":139,\"HR\":67,\"IsArr\":0,\"LP\":72,\"LastChangeTime\":1478820540,\"Lat\":0,\"Lon\":0,\"MDate\":1478858340,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"115b17a7f373a9800a81929cacdbceb3\",\"DataSource\":\"FromDevice\",\"HP\":145,\"HR\":72,\"IsArr\":0,\"LP\":71,\"LastChangeTime\":1478820699,\"Lat\":0,\"Lon\":0,\"MDate\":1478858483,\"Note\":\"testing\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"bf2be0f05926b91e5254d79d8837c650\",\"DataSource\":\"FromDevice\",\"HP\":137,\"HR\":63,\"IsArr\":0,\"LP\":84,\"LastChangeTime\":1478821524,\"Lat\":0,\"Lon\":0,\"MDate\":1478859305,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":5,\"DataID\":\"609d6b0e982799840019f62c2ed0a86c\",\"DataSource\":\"FromDevice\",\"HP\":122,\"HR\":76,\"IsArr\":0,\"LP\":82,\"LastChangeTime\":1478834126,\"Lat\":0,\"Lon\":0,\"MDate\":1478871911,\"Note\":\"after lunch\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":5,\"DataID\":\"ebe649929e4034e004d48373feb3cdfc\",\"DataSource\":\"FromDevice\",\"HP\":122,\"HR\":72,\"IsArr\":0,\"LP\":81,\"LastChangeTime\":1478834197,\"Lat\":0,\"Lon\":0,\"MDate\":1478871976,\"Note\":\"Quick repeat to validate\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"e9d33973c33ff779e67cba6ff0d104fe\",\"DataSource\":\"FromDevice\",\"HP\":138,\"HR\":66,\"IsArr\":0,\"LP\":85,\"LastChangeTime\":1479027265,\"Lat\":0,\"Lon\":0,\"MDate\":1479065042,\"Note\":\"rating\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":6,\"DataID\":\"b3d907ed3d5319fe39bb02eee5ad273d\",\"DataSource\":\"FromDevice\",\"HP\":108,\"HR\":66,\"IsArr\":0,\"LP\":68,\"LastChangeTime\":1479027310,\"Lat\":0,\"Lon\":0,\"MDate\":1479065110,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":1,\"DataID\":\"e3fb03a878451e7711cd67dfb8fb7d48\",\"DataSource\":\"FromDevice\",\"HP\":155,\"HR\":76,\"IsArr\":0,\"LP\":113,\"LastChangeTime\":1479027425,\"Lat\":0,\"Lon\":0,\"MDate\":1479065225,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":6,\"DataID\":\"18d10b3bc1b1f578c97214afe999c57a\",\"DataSource\":\"FromDevice\",\"HP\":118,\"HR\":66,\"IsArr\":0,\"LP\":78,\"LastChangeTime\":1479027518,\"Lat\":0,\"Lon\":0,\"MDate\":1479065318,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":6,\"DataID\":\"28adb42ea33cd4040b075d216db81efa\",\"DataSource\":\"FromDevice\",\"HP\":117,\"HR\":73,\"IsArr\":0,\"LP\":59,\"LastChangeTime\":1479027684,\"Lat\":0,\"Lon\":0,\"MDate\":1479065484,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"beeda71d4d01c67bf991e9a88f2273fd\",\"DataSource\":\"FromDevice\",\"HP\":142,\"HR\":70,\"IsArr\":0,\"LP\":78,\"LastChangeTime\":1479078527,\"Lat\":0,\"Lon\":0,\"MDate\":1479116318,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":5,\"DataID\":\"594005de6f40e20e68714c9f69ec7553\",\"DataSource\":\"FromDevice\",\"HP\":124,\"HR\":62,\"IsArr\":0,\"LP\":77,\"LastChangeTime\":1479096393,\"Lat\":0,\"Lon\":0,\"MDate\":1479134183,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"26515d8ab0cbb9ea02ea43b8629575d2\",\"DataSource\":\"FromDevice\",\"HP\":123,\"HR\":78,\"IsArr\":0,\"LP\":97,\"LastChangeTime\":1479165469,\"Lat\":0,\"Lon\":0,\"MDate\":1479203257,\"Note\":\"travel anxiety\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"e1a50a1de1862ee44c094e1408ef7f7a\",\"DataSource\":\"FromDevice\",\"HP\":132,\"HR\":79,\"IsArr\":0,\"LP\":85,\"LastChangeTime\":1479188231,\"Lat\":0,\"Lon\":0,\"MDate\":1479226015,\"Note\":\"got iot activation working\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":4,\"DataID\":\"ef80d5d914a593f102bddd1c1b0a68f5\",\"DataSource\":\"FromDevice\",\"HP\":121,\"HR\":96,\"IsArr\":0,\"LP\":85,\"LastChangeTime\":1479269197,\"Lat\":0,\"Lon\":0,\"MDate\":1479306997,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":1,\"DataID\":\"662180d14cc9a10a676e8d6b532ea977\",\"DataSource\":\"FromDevice\",\"HP\":129,\"HR\":65,\"IsArr\":0,\"LP\":119,\"LastChangeTime\":1479434640,\"Lat\":0,\"Lon\":0,\"MDate\":1479472440,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":2,\"DataID\":\"bbe3adfac8e6a1cfeb67a5b3bc473d61\",\"DataSource\":\"FromDevice\",\"HP\":131,\"HR\":65,\"IsArr\":0,\"LP\":101,\"LastChangeTime\":1479435060,\"Lat\":0,\"Lon\":0,\"MDate\":1479472860,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"1b49947ff2d600302cbc2261539c52b6\",\"DataSource\":\"FromDevice\",\"HP\":132,\"HR\":66,\"IsArr\":0,\"LP\":93,\"LastChangeTime\":1479435660,\"Lat\":0,\"Lon\":0,\"MDate\":1479473460,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"},{\"BPL\":3,\"DataID\":\"b96b95cf14fc310089f34d5e964a4345\",\"DataSource\":\"FromDevice\",\"HP\":134,\"HR\":65,\"IsArr\":0,\"LP\":95,\"LastChangeTime\":1479436800,\"Lat\":0,\"Lon\":0,\"MDate\":1479474600,\"Note\":\"\",\"TimeZone\":\"+1050\",\"userid\":\"87a370062ace417e892d81254344eaf3\"}],\"BPUnit\":0,\"CurrentRecordCount\":31,\"NextPageUrl\":\"\",\"PageLength\":50,\"PageNumber\":1,\"PrevPageUrl\":\"\",\"RecordCount\":31}"
+				},
+				{
+					"id": "d72bac09-0780-4915-ba17-18de7150525d",
+					"name": "bp_xml",
+					"originalRequest": {
+						"url": "https://api.ihealthlabs.com:8443/openapiv2/application/bp.xml/?redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=bfee0e8ef59f481596a4ffc788737704&client_secret=2c1e4ad1ea324c45a97c592ce1ceb9ae&sc=3cecd8c7f92d4835a27bcabcca28e8e2&sv=1ab27e19dd1f43b1be40d34a32fd6ddf&access_token=51Ja*rI0yWcTx-85HXOXVi*5ZlGK8lCzgId4LdT*2-GI6iazYMWCEshefHFGLOS-X*g17SRlDLIsh6MpsWx7Ba4tAcx6wICj9WNjzsQ4M2Q8rmFaddXFmnJWJwFs3k62kx0Sp3SuEaPUQnr1dRmSck1tMggX54T8MGQ3-v126mxyIA*4p0L-AFZBk4QRPATKHAxVMpPKl15resfsRHV5rw&START_TIME=1479387633&END_TIME=1479698628",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "3189",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 21 Nov 2016 22:31:54 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Microsoft-IIS/7.5",
+							"description": "A name for the server"
+						},
+						{
+							"name": "X-AspNet-Version",
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Powered-By",
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"responseTime": 1493,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?><DownloadBPDataResultEntity xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">  <BPDataList>    <DownloadBPDataEntity>      <userid>87a370062ace417e892d81254344eaf3</userid>      <BPL>1</BPL>      <DataID>662180d14cc9a10a676e8d6b532ea977</DataID>      <HP>129</HP>      <HR>65</HR>      <IsArr>0</IsArr>      <Lat>0</Lat>      <Lon>0</Lon>      <LP>119</LP>      <MDate>1479472440</MDate>      <Note />      <LastChangeTime>1479434640</LastChangeTime>      <DataSource>FromDevice</DataSource>      <TimeZone>+1050</TimeZone>    </DownloadBPDataEntity>    <DownloadBPDataEntity>      <userid>87a370062ace417e892d81254344eaf3</userid>      <BPL>2</BPL>      <DataID>bbe3adfac8e6a1cfeb67a5b3bc473d61</DataID>      <HP>131</HP>      <HR>65</HR>      <IsArr>0</IsArr>      <Lat>0</Lat>      <Lon>0</Lon>      <LP>101</LP>      <MDate>1479472860</MDate>      <Note />      <LastChangeTime>1479435060</LastChangeTime>      <DataSource>FromDevice</DataSource>      <TimeZone>+1050</TimeZone>    </DownloadBPDataEntity>    <DownloadBPDataEntity>      <userid>87a370062ace417e892d81254344eaf3</userid>      <BPL>3</BPL>      <DataID>1b49947ff2d600302cbc2261539c52b6</DataID>      <HP>132</HP>      <HR>66</HR>      <IsArr>0</IsArr>      <Lat>0</Lat>      <Lon>0</Lon>      <LP>93</LP>      <MDate>1479473460</MDate>      <Note />      <LastChangeTime>1479435660</LastChangeTime>      <DataSource>FromDevice</DataSource>      <TimeZone>+1050</TimeZone>    </DownloadBPDataEntity>    <DownloadBPDataEntity>      <userid>87a370062ace417e892d81254344eaf3</userid>      <BPL>3</BPL>      <DataID>b96b95cf14fc310089f34d5e964a4345</DataID>      <HP>134</HP>      <HR>65</HR>      <IsArr>0</IsArr>      <Lat>0</Lat>      <Lon>0</Lon>      <LP>95</LP>      <MDate>1479474600</MDate>      <Note />      <LastChangeTime>1479436800</LastChangeTime>      <DataSource>FromDevice</DataSource>      <TimeZone>+1050</TimeZone>    </DownloadBPDataEntity>    <DownloadBPDataEntity>      <userid>87a370062ace417e892d81254344eaf3</userid>      <BPL>4</BPL>      <DataID>6ea3566c89f43b9248134f8431e0885e</DataID>      <HP>128</HP>      <HR>59</HR>      <IsArr>0</IsArr>      <Lat>0</Lat>      <Lon>0</Lon>      <LP>87</LP>      <MDate>1479729616</MDate>      <Note>working</Note>      <LastChangeTime>1479691838</LastChangeTime>      <DataSource>FromDevice</DataSource>      <TimeZone>+1050</TimeZone>    </DownloadBPDataEntity>    <DownloadBPDataEntity>      <userid>87a370062ace417e892d81254344eaf3</userid>      <BPL>5</BPL>      <DataID>fa91a7f5a9a2ecb2ea652fa66468e412</DataID>      <HP>120</HP>      <HR>60</HR>      <IsArr>0</IsArr>      <Lat>0</Lat>      <Lon>0</Lon>      <LP>80</LP>      <MDate>1479737841</MDate>      <Note>manual entry sunil</Note>      <LastChangeTime>1479698290</LastChangeTime>      <DataSource>Manual</DataSource>      <TimeZone>+1100</TimeZone>    </DownloadBPDataEntity>  </BPDataList>  <BPUnit>0</BPUnit>  <CurrentRecordCount>6</CurrentRecordCount>  <NextPageUrl />  <PageLength>50</PageLength>  <PageNumber>1</PageNumber>  <PrevPageUrl />  <RecordCount>6</RecordCount></DownloadBPDataResultEntity>"
+				}
+			]
+		},
+		{
+			"name": "ics rest call",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "cloud.admin",
+						"password": "congenialShuttle8",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowapi/rest/RXR_INTEGRATION_IH02/v01/metadata/bp",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2xvdWQuYWRtaW46Y29uZ2VuaWFsU2h1dHRsZTg=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

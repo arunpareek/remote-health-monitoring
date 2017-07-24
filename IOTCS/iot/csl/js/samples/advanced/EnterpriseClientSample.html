@@ -1,0 +1,362 @@
+<html>
+<!--
+ - Copyright (c) 2015, 2016, Oracle and/or its affiliates. All rights reserved.
+ -
+ - This software is dual-licensed to you under the MIT License (MIT) and 
+ - the Universal Permissive License (UPL). See the LICENSE file in the root
+ - directory for license terms. You may choose either license, or both.
+ -
+ -->
+
+   <head>
+    <title>sample: enterprise-app</title>
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta charset="utf-8">
+    <script src="../../external/forge.bundle.js"></script>
+    <script src="../../build/modules/enterprise-library.web.js"></script>
+    <script language="JavaScript">
+
+//////////////////////////////////////////////////////////////////////////////
+// helpers
+
+function $(id) {return document.getElementById(id);}
+//function log(msg) { console.log(msg); }
+function log(msg) { $('log').innerHTML += msg + "<br>"; }
+
+//////////////////////////////////////////////////////////////////////////////
+// ui
+
+function ui_option_clear(id) {
+    var o = $(id);
+    while (o.firstChild) {
+        o.removeChild(o.firstChild);
+    }
+}
+
+function ui_option_add(id, option) {
+    // expect option = {name:'', value:''}
+    var o = document.createElement('option');
+    o.setAttribute('name', option.name);
+    o.setAttribute('value', option.value);
+    o.text = option.name;
+    $(id).appendChild(o);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// iotcs ecl app
+
+var ec = null;
+var device = null;
+var messageEnumerator = null;
+var resourceEnumerator = null;
+var oldId = null;
+
+function all_refresh() {
+    ui_option_clear('apps');
+    var appPageable = iotcs.enterprise.EnterpriseClient.getApplications();
+
+    var app_processor = function(response){
+        if(response.items){
+            response.items.forEach(function(item){
+                ui_option_add('apps', {'name':item.name, 'value':item.name});
+            });
+        }
+    };
+
+    appPageable.page('first', 200).then(app_processor);
+}
+
+function apps_select() {
+    ui_option_clear('devicemodels');
+
+    iotcs.enterprise.EnterpriseClient.newClient($('apps')[$('apps').selectedIndex].value, function (client) {
+
+        ec = client;
+
+        ec.getApplication(function (response) {
+            $('app').innerHTML = JSON.stringify(response);
+            ec.getDeviceModels().page('first').then(function (response) {
+                if (response.items) {
+                    response.items.forEach(function (item) {
+                        ui_option_add('devicemodels', {'name': item.name, 'value': item.urn});
+                    });
+                }
+            });
+        });
+
+    });
+
+}
+
+function devicemodels_select() {
+    ui_option_clear('devices');
+    ec.getDeviceModel($('devicemodels')[$('devicemodels').selectedIndex].value, function(response){
+        $('dm').innerHTML = JSON.stringify(response);
+    });
+
+    ec.getActiveDevices($('devicemodels')[$('devicemodels').selectedIndex].value).page('first',200).then(function(response){
+        if(response.items){
+            response.items.forEach(function(item){
+                ui_option_add('devices', {'name':item.id, 'value':JSON.stringify(item)});
+            });
+        }
+    });
+
+}
+
+function device_select() {
+    ui_option_clear('seldevmods');
+    $('dev').innerHTML = $('devices')[$('devices').selectedIndex].value;
+    var devObject = JSON.parse($('devices')[$('devices').selectedIndex].value);
+    devObject.deviceModels.forEach(function(model){
+        ui_option_add('seldevmods', {'name':model.name, 'value':JSON.stringify(model)});
+    });
+}
+
+function device_activate() {
+    if(device != null){
+        device.close();
+    }
+    if(oldId) {
+        messageEnumerator.unsetListener(oldId);
+    }
+
+    ui_option_clear('selattributes');
+    ui_option_clear('selactions');
+    ui_option_clear('selresources');
+    $('devdata').innerHTML = '<br>';
+    $('devmessages').innerHTML = '<br>';
+    $('actionresp').innerHTML = '';
+    $('resourceresp').innerHTML = '';
+    var selModel = JSON.parse($('seldevmods')[$('seldevmods').selectedIndex].value);
+    selModel.attributes.forEach(function(attribute){
+        ui_option_add('selattributes', {'name':attribute.name, 'value':attribute.description});
+    });
+    if(selModel.actions) {
+        selModel.actions.forEach(function(action){
+            ui_option_add('selactions', {'name':action.name, 'value':action.description});
+        });
+    }
+    var devId = $('devices')[$('devices').selectedIndex].innerHTML;
+
+    resourceEnumerator = new iotcs.enterprise.ResourceEnumerator(ec, devId);
+    resourceEnumerator.getResources().page('first').then(function (response){
+        response.items.forEach(function(item){
+            ui_option_add('selresources', {'name':item.url, 'value':JSON.stringify(item)});
+        });
+    });
+
+    device = new iotcs.enterprise.VirtualDevice(devId, selModel, ec);
+    device.onChange = function(tupples){
+        tupples.forEach( function (tupple)
+        {
+            var show = {
+                lastUpdate: tupple.attribute.lastUpdate,
+                oldValue: tupple.oldValue,
+                newValue: tupple.newValue
+            };
+            $('devdata').innerHTML = $('devdata').innerHTML + JSON.stringify(show) + '<br>';
+        });
+    };
+
+    device.onData = function(jsonObjects){
+        $('devcustomdata').innerHTML = $('devcustomdata').innerHTML + JSON.stringify(jsonObjects) + '<br>';
+    };
+
+    var processMessages = function(items){
+        items.forEach(function(item) {
+            if(item.type === 'ALERT') {
+                $('devmessages').innerHTML = $('devmessages').innerHTML + JSON.stringify(item) + '<br>';
+            }
+        });
+    };
+
+    if(!messageEnumerator){
+        messageEnumerator = new iotcs.enterprise.MessageEnumerator(ec);
+    }
+    oldId = devId;
+    messageEnumerator.setListener(devId, 'ALERT', processMessages);
+
+}
+
+function select_attribute(){
+    var name = $('selattributes')[$('selattributes').selectedIndex].innerHTML;
+    if(device[name]) {
+        $('attrval').value = device[name].value;
+    }
+}
+
+function attribute_set(){
+    var value = $('setattrval').value;
+    var name = $('selattributes')[$('selattributes').selectedIndex].innerHTML;
+    var type = null;
+    var selModel = JSON.parse($('seldevmods')[$('seldevmods').selectedIndex].value);
+    selModel.attributes.forEach(function(attribute){
+        if(attribute.name === name){
+            type = attribute.type;
+        }
+    });
+    switch(type) {
+        case 'INTEGER':
+            value = parseInt(value);
+            break;
+        case 'NUMBER':
+            value = parseFloat(value);
+            break;
+        case 'STRING':
+            break;
+        case 'BOOLEAN':
+            value = (value === 'true' ? true : false);
+        case 'DATETIME':
+            value = Date.parse(value);
+            break;
+    }
+    if(device[name]) {
+        device[name].value = value;
+    }
+}
+
+function action_execute(){
+    var name = $('selactions')[$('selactions').selectedIndex].innerHTML;
+    $('actionresp').innerHTML = '';
+    if(device[name]) {
+        device[name].onExecute = function(response){
+            $('actionresp').innerHTML = JSON.stringify(response);
+        };
+        var value = $('actionarg').value;
+        if(value && (value !== '')){
+            var type = null;
+            var selModel = JSON.parse($('seldevmods')[$('seldevmods').selectedIndex].value);
+            selModel.actions.forEach(function(action){
+                if(action.name === name){
+                    type = action.argType;
+                }
+            });
+            switch(type) {
+                case 'INTEGER':
+                    value = parseInt(value);
+                    break;
+                case 'NUMBER':
+                    value = parseFloat(value);
+                    break;
+                case 'STRING':
+                    break;
+                case 'BOOLEAN':
+                    value = (value === 'true' ? true : false);
+                    break;
+                case 'DATETIME':
+                    value = Date.parse(value);
+                    break;
+            }
+            device.call(name, value);
+        }
+        else {
+            device.call(name);
+        }
+    }
+}
+
+function resource_get(){
+    var resource = JSON.parse($('selresources')[$('selresources').selectedIndex].value);
+    var options = {
+        method: 'GET'
+    };
+    resourceEnumerator.invokeResource(resource, options, function(response){
+        $('resourceresp').innerHTML = JSON.stringify(response);
+    });
+}
+
+function resource_put(){
+    var resource = JSON.parse($('selresources')[$('selresources').selectedIndex].value);
+    var value = $('resourcearg').value;
+    var options = {
+        method: 'PUT'
+    };
+    resourceEnumerator.invokeResource(resource, options, null, value, function(response){
+        $('resourceresp').innerHTML = JSON.stringify(response);
+    });
+}
+
+function resource_post(){
+    var resource = JSON.parse($('selresources')[$('selresources').selectedIndex].value);
+    var value = $('resourcearg').value;
+    var options = {
+        method: 'POST'
+    };
+    resourceEnumerator.invokeResource(resource, options, null, value, function(response){
+        $('resourceresp').innerHTML = JSON.stringify(response);
+    });
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function load() {
+    //////////////////////////////////////////////////////////////////////////
+    iotcs.oracle.iot.client.test.auth.activated = true;
+    iotcs.oracle.iot.tam.store = getParameterByName('trustStore');
+    iotcs.oracle.iot.tam.storePassword = 'changeit';
+    //////////////////////////////////////////////////////////////////////////
+    all_refresh();
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+  </script>
+  </head>
+  <body onLoad="load()">
+    <button onclick="all_refresh();">Refresh apps/models</button>
+    <hr>
+    Applications: <select id="apps"></select>
+    <button onclick="apps_select();">Select application</button>
+    <hr>
+    Selected application: <span id="app"></span>
+    <hr>
+    Application device models: <select id="devicemodels"></select>
+    <button onclick="devicemodels_select();">Select model</button>
+    <hr>
+    Device model info: <span id="dm"></span>
+    <hr>
+    Selected application devices for selected model: <select id="devices"></select>
+    <button onclick="device_select();">Select device</button>
+    <hr>
+    Selected device info: <span id="dev"></span>
+    <hr>
+    Selected device models: <select id="seldevmods"></select>
+    <button onclick="device_activate();">Monitor selected device with this model</button>
+    <hr>
+    Selected device actions: <select id="selactions"></select>
+    Argument: <input type="text" id="actionarg"/>
+    <button onclick="action_execute();">Execute</button>
+    <hr>
+    Action on response: <span id="actionresp"></span>
+    <hr>
+    Selected device resources: <select id="selresources"></select>
+    <button onclick="resource_get();">GET</button>
+    Argument: <input type="text" id="resourcearg"/>
+    <button onclick="resource_put();">PUT</button>
+    <button onclick="resource_post();">POST</button>
+    <hr>
+    Resource on response: <span id="resourceresp"></span>
+    <hr>
+    Selected device attributes: <select id="selattributes" onchange="select_attribute();"></select>
+    Actual value: <input type="text" id="attrval" readonly/>
+    Set value: <input type="text" id="setattrval"/>
+    <button onclick="attribute_set();">Set</button>
+    <hr>
+    Device on change data: <span id="devdata"><br></span>
+    <hr>
+    Device on custom data: <span id="devcustomdata"><br></span>
+    <hr>
+    Device alerts: <span id="devmessages"><br></span>
+    <hr>
+  </body>
+</head>
+</html>

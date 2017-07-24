@@ -1,0 +1,323 @@
+{
+	"variables": [],
+	"info": {
+		"name": "IOTRP",
+		"_postman_id": "d0e983f6-6037-d58d-2ba4-0bb96bc03f85",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ANKI",
+			"description": "",
+			"item": [
+				{
+					"name": "ANKI Ambulance",
+					"request": {
+						"url": "http://apics.anzse.com/ankiDrive/trackCountTravel/Nuke/30/1000",
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "f35cffa1-1e44-4e94-b710-d0baa47a876b",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ANKI Ambulance Headlight",
+					"request": {
+						"url": "http://apics.anzse.com/ankiDrive/flashTaillights/Nuke",
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "f35cffa1-1e44-4e94-b710-d0baa47a876b",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Launch Drone",
+					"request": {
+						"url": "http://apics.anzse.com/launchDrone",
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "f35cffa1-1e44-4e94-b710-d0baa47a876b",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Anki Play Siren",
+					"request": {
+						"url": "http://apics.anzse.com/playSound/siren.wav",
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "f35cffa1-1e44-4e94-b710-d0baa47a876b",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "Authenticate OAuth2",
+					"request": {
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v2/oauth2/token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "client_assertion_type",
+									"value": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Device Information",
+					"request": {
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v1/endpoints/AAAAAASETF8A-B4/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXJ1bi5wYXJlZWtAcnViaWNvbnJlZC5jb206I015bGlmZTEy",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Device Model Information",
+					"request": {
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v2/deviceModels/urn:test:myHealth",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXJ1bi5wYXJlZWtAcnViaWNvbnJlZC5jb206I015bGlmZTEy",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"altitude\":12.34,\r\n    \"latLonString\":\"Property description was not set\",\r\n    \"origin\":\"ASSIGNED\",\r\n    \"latitude\":12.34,\r\n    \"geoLocationString\":\"Property description was not set\",\r\n    \"uncertainty\":12.34,\r\n    \"empty\":false,\r\n    \"longitude\":12.34\r\n} "
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Device Location",
+					"request": {
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v2/devices/AAAAAASETF8A-B4/location",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXJ1bi5wYXJlZWtAcnViaWNvbnJlZC5jb206I015bGlmZTEy",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"description": "",
+			"item": [
+				{
+					"name": "Send Message List",
+					"request": {
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v1/messages",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXJ1bi5wYXJlZWtAcnViaWNvbnJlZC5jb206I015bGlmZTEy",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"items\": [\r\n    {\r\n      \"id\": \"e94a5a6c-0668-40a5-a7f4-d93a23da23b2\",\r\n      \"clientId\":\"12e08864-7616-4bf3-b70f-0cc137543aa1\",\r\n      \"source\": \"AAAAAASETF8A-B4\",\r\n      \"destination\": \"\",\r\n      \"priority\": \"LOW\",\r\n      \"reliability\": \"BEST_EFFORT\",\r\n      \"eventTime\": 1479292464875,\r\n      \"eventTimeAsString\": \"2016-11-16T10:34:24Z\",\r\n      \"sender\": \"\",\r\n      \"type\": \"DATA\",\r\n      \"properties\": {},\r\n      \"direction\": \"FROM_DEVICE\",\r\n      \"receivedTime\": 1479292466474,\r\n      \"receivedTimeAsString\": \"2016-11-16T10:34:26Z\",\r\n      \"payload\": {\r\n        \"format\": \"urn:test:myHealth:attributes\",\r\n        \"data\": {\r\n          \"customerName\": \"Gareth Evans\"\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+						},
+						"description": "Send a Message to Device Model"
+					},
+					"response": []
+				},
+				{
+					"name": "Send Message",
+					"request": {
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v2/messages",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXJ1bi5wYXJlZWtAcnViaWNvbnJlZC5jb206I015bGlmZTEy",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-EndpointId",
+								"value": "AAAAAASETF8A-B4",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n      \"clientId\":\"12e08864-7616-4bf3-b70f-0cc137543aa1\",\r\n      \"source\": \"AAAAAASETF8A-B4\",\r\n      \"destination\": \"\",\r\n      \"priority\": \"LOW\",\r\n      \"reliability\": \"BEST_EFFORT\",\r\n      \"eventTime\": 1479292464875,\r\n      \"sender\": \"\",\r\n      \"type\": \"DATA\",\r\n      \"properties\": {},\r\n      \"payload\": {\r\n        \"format\": \"urn:test:myHealth:attributes\",\r\n        \"data\": {\r\n          \"customerName\": \"Gareth Evans\"\r\n        }\r\n      }\r\n    }\r\n  ]"
+						},
+						"description": "sendCustomerNameToDeviceModel"
+					},
+					"response": []
+				},
+				{
+					"name": "Query Messages from Device",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "arun.pareek@rubiconred.com",
+								"password": "#Mylife12",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "https://iottrial2608-iotpartner.iot.us.oraclecloud.com:443/iot/api/v2/messages?device=AAAAAASETF8A-B4",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXJ1bi5wYXJlZWtAcnViaWNvbnJlZC5jb206I015bGlmZTEy",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-EndpointId",
+								"value": "AAAAAASETF8A-B4",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n      \"clientId\":\"12e08864-7616-4bf3-b70f-0cc137543aa1\",\r\n      \"source\": \"AAAAAASETF8A-B4\",\r\n      \"destination\": \"\",\r\n      \"priority\": \"LOW\",\r\n      \"reliability\": \"BEST_EFFORT\",\r\n      \"eventTime\": 1479292464875,\r\n      \"sender\": \"\",\r\n      \"type\": \"DATA\",\r\n      \"properties\": {},\r\n      \"payload\": {\r\n        \"format\": \"urn:test:myHealth:attributes\",\r\n        \"data\": {\r\n          \"customerName\": \"Gareth Evans\"\r\n        }\r\n      }\r\n    }\r\n  ]"
+						},
+						"description": "sendCustomerNameToDeviceModel"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

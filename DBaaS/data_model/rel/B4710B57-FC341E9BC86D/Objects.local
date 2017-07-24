@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="391A9B4A-45FB-3A0E-FC21-57998878DB10" name="blood_pressure" seqName="seg_0"/>
+   <object objectType="Table" objectID="914D0748-EC33-FA80-0E52-4F2CAB2638F1" name="patient" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

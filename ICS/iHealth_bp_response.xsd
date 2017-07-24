@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Sun Nov 27 2016 12:49:06 GMT+1100 (AUS Eastern Daylight Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="DownloadBPDataResultEntity">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="BPDataList">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="DownloadBPDataEntity" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="userid" type="xs:string"></xs:element>
+                                                               <xs:element name="BPL" type="xs:int"></xs:element>
+                                                               <xs:element name="DataID" type="xs:string"></xs:element>
+                                                               <xs:element name="HP" type="xs:int"></xs:element>
+                                                               <xs:element name="HR" type="xs:int"></xs:element>
+                                                               <xs:element name="IsArr" type="xs:int"></xs:element>
+                                                               <xs:element name="Lat" type="xs:int"></xs:element>
+                                                               <xs:element name="Lon" type="xs:int"></xs:element>
+                                                               <xs:element name="LP" type="xs:int"></xs:element>
+                                                               <xs:element name="MDate" type="xs:int"></xs:element>
+                                                               <xs:element name="Note" type="xs:string"></xs:element>
+                                                               <xs:element name="LastChangeTime" type="xs:int"></xs:element>
+                                                               <xs:element name="DataSource" type="xs:string"></xs:element>
+                                                               <xs:element name="TimeZone" type="xs:int"></xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="BPUnit" type="xs:int"></xs:element>
+                           <xs:element name="CurrentRecordCount" type="xs:int"></xs:element>
+                           <xs:element name="NextPageUrl"></xs:element>
+                           <xs:element name="PageLength" type="xs:int"></xs:element>
+                           <xs:element name="PageNumber" type="xs:int"></xs:element>
+                           <xs:element name="PrevPageUrl"></xs:element>
+                           <xs:element name="RecordCount" type="xs:int"></xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

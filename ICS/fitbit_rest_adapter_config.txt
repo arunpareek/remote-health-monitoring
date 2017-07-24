@@ -1,0 +1,53 @@
+https://www.fitbit.com/oauth2/authorize?client_id=227Y45&response_type=code&scope=heartrate&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+-X GET https://api.fitbit.com/oauth2/token?client_id=227Y45&client_secret=cddb9dd55c3682861f760a407f517375&code=$auth_code&grant_type=authorization_code
+
+-X GET -H Authorization Basic MjI3WTQ1OmNkZGI5ZGQ1NWMzNjgyODYxZjc2MGE0MDdmNTE3Mzc1 https://api.fitbit.com/oauth2/token?client_id=227Y45&client_secret=cddb9dd55c3682861f760a407f517375&code=$auth_code&grant_type=authorization_code
+
+
+-H Authorization: ${token_type} ${access_token}
+
+
+
+https://integration-gse00002809.integration.us2.oraclecloud.com/icsapis/agent/oauth/initoauth?client_id=227Y45&client_secret=cddb9dd55c3682861f760a407f517375&confirmoauth.client.secret=cddb9dd55c3682861f760a407f517375&auth_code_url=https%3A%2F%2Fwww.fitbit.com%2Foauth2%2Fauthorize&access_token_url=https%3A%2F%2Fapi.fitbit.com%2Foauth2%2Ftoken&scope=heartrate&INSTANCE_ID=RXR_REST_FB_OUT01&plugin_id=rest
+
+https://integration-gse00002809.integration.us2.oraclecloud.com/icsapis/agent/oauth/initoauth?
+
+client_id=227Y45
+client_secret=cddb9dd55c3682861f760a407f517375
+confirmoauth.client.secret=cddb9dd55c3682861f760a407f517375
+auth_code_url=https%3A%2F%2Fwww.fitbit.com%2Foauth2%2Fauthorize%3Fresponse_type%3Dcode
+access_token_url=https%3A%2F%2Fapi.fitbit.com%2Foauth2%2Ftoken
+scope=heartrate
+INSTANCE_ID=RXR_REST_FB_OUT01
+plugin_id=rest
+
+
+
+
+https://www.fitbit.com/oauth2/authorize/?client_id=227Y45&response_type=code&scope=heartrate&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+https://integration-gse00002809.integration.us2.oraclecloud.com/icsapis/agent/oauth/callback?code=e31e5cd96fb53f9f7aa1dcfb8c380458960de73a#_=_
+
+Cannot obtain an access token. Authorization Failed: GET https://api.fitbit.com/oauth2/token?grant_type=authorization_code&code=e31e5cd96fb53f9f7aa1dcfb8c380458960de73a&client_id=227Y45 returned a response status of 401 Unauthorized 
+
+
+-H "Authorization: Basic MjI3WTQ1OmNkZGI5ZGQ1NWMzNjgyODYxZjc2MGE0MDdmNTE3Mzc1" -H "Content-Type: application/x-www-form-urlencoded"
+
+
+-X POST -H "Authorization: Basic MjI3WTQ1OmNkZGI5ZGQ1NWMzNjgyODYxZjc2MGE0MDdmNTE3Mzc1" -H "Content-Type: application/x-www-form-urlencoded" https://api.fitbit.com/oauth2/token?client_id=227Y45&code=$auth_code&grant_type=authorization_code
+
+https://api.fitbit.com/oauth2/token?grant_type=authorization_code&code=d711b0a75b31da325d08f42576e1667237e5e5d2&client_id=227Y45&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+
+
+
+https://www.fitbit.com/oauth2/authorize/?client_id=227Y45&response_type=code&scope=heartrate&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+-X POST -H "Authorization: Basic MjI3WTQ1OmNkZGI5ZGQ1NWMzNjgyODYxZjc2MGE0MDdmNTE3Mzc1" -H "Content-Type: application/x-www-form-urlencoded" https://api.fitbit.com/oauth2/token?client_id=227Y45&code=$auth_code&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fintegration-gse00002809.integration.us2.oraclecloud.com%2Ficsapis%2Fagent%2Foauth%2Fcallback
+
+access_[tT]oken
+refresh_[tT]oken
+Bearer
+
+

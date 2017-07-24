@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f04ffd79-a888-46b8-a07a-85ab6b7fba5c" activeEnvironment="Default environment" name="ICS_API_TESTS" lastOpened="2016-11-28T00:01:21.322+11:00" resourceRoot="" soapui-version="6.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="83bc9884-4f7c-4613-93c6-9eba4db685c7" wsaVersion="NONE" name="get_data_ptt_GetBPData01_REQUEST_binding" type="wsdl" bindingName="{http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth}get_data_ptt_GetBPData01_REQUEST_binding" soapVersion="1_1" anonymous="optional" definition="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_FB01/v01/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_FB01/v01/?wsdl"><con:part><con:url>https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_FB01/v01/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ihealth" targetNamespace="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:inp1="http://xmlns.oracle.com/singleString" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:AlgorithmSuite>
+          <wsp:Policy>
+            <sp:Basic128/>
+          </wsp:Policy>
+        </sp:AlgorithmSuite>
+        <sp:TransportToken>
+          <wsp:Policy>
+            <sp:HttpsToken RequireClientCertificate="false">
+              <wsp:Policy/>
+            </sp:HttpsToken>
+          </wsp:Policy>
+        </sp:TransportToken>
+        <sp:Layout>
+          <wsp:Policy>
+            <sp:Lax/>
+          </wsp:Policy>
+        </sp:Layout>
+        <sp:IncludeTimestamp/>
+      </wsp:Policy>
+    </sp:TransportBinding>
+    <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+          <wsp:Policy>
+            <sp:WssUsernameToken10/>
+          </wsp:Policy>
+        </sp:UsernameToken>
+      </wsp:Policy>
+    </sp:SupportingTokens>
+  </wsp:Policy>
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/singleString" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="requestMessage" type="string"/>
+      <element name="replyMessage" type="string"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="requestMessage">
+    <wsdl:part element="inp1:requestMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:message name="replyMessage">
+    <wsdl:part element="inp1:replyMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:portType name="get_data_ptt_GetBPData01_REQUEST">
+    <wsdl:operation name="get_data">
+      <wsdl:input message="tns:requestMessage"/>
+      <wsdl:output message="tns:replyMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="get_data_ptt_GetBPData01_REQUEST_binding" type="tns:get_data_ptt_GetBPData01_REQUEST">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wss_username_token_over_ssl_service_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="get_data">
+      <soap:operation soapAction="get_data"/>
+      <wsdl:input>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ihealth">
+    <wsdl:port binding="tns:get_data_ptt_GetBPData01_REQUEST_binding" name="get_data_ptt_GetBPData01_REQUEST_pt">
+      <soap:address location="https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_FB01/v01/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_FB01/v01/</con:endpoint></con:endpoints><con:operation id="684070ce-72bd-41e5-8183-91944f777a19" isOneWay="false" action="get_data" name="get_data" bindingOperationName="get_data" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="04b7a05f-0a53-4ced-9cc6-682f4fbee343" name="Request 1" useWsAddressing="false" defaultOutgoingWss="ics_usernametoken" outgoingWss="ics_usernametoken"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_FB01/v01/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sin="http://xmlns.oracle.com/singleString">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sin:requestMessage>gero et</sin:requestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>SPNEGO/Kerberos</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes><con:authType>SPNEGO/Kerberos</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="get_data"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="80cff180-9b6b-43bc-965f-4e6f9f6fbab8" wsaVersion="NONE" name="get_data_ptt_GetData02_REQUEST_binding" type="wsdl" bindingName="{http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth}get_data_ptt_GetData02_REQUEST_binding" soapVersion="1_1" anonymous="optional" definition="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_IH01/v01/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_IH01/v01/?wsdl"><con:part><con:url>https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_IH01/v01/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ihealth" targetNamespace="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:inp1="http://xmlns.oracle.com/singleString" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:AlgorithmSuite>
+          <wsp:Policy>
+            <sp:Basic128/>
+          </wsp:Policy>
+        </sp:AlgorithmSuite>
+        <sp:TransportToken>
+          <wsp:Policy>
+            <sp:HttpsToken RequireClientCertificate="false">
+              <wsp:Policy/>
+            </sp:HttpsToken>
+          </wsp:Policy>
+        </sp:TransportToken>
+        <sp:Layout>
+          <wsp:Policy>
+            <sp:Lax/>
+          </wsp:Policy>
+        </sp:Layout>
+        <sp:IncludeTimestamp/>
+      </wsp:Policy>
+    </sp:TransportBinding>
+    <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+          <wsp:Policy>
+            <sp:WssUsernameToken10/>
+          </wsp:Policy>
+        </sp:UsernameToken>
+      </wsp:Policy>
+    </sp:SupportingTokens>
+  </wsp:Policy>
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/singleString" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="requestMessage" type="string"/>
+      <element name="replyMessage" type="string"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="requestMessage">
+    <wsdl:part element="inp1:requestMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:message name="replyMessage">
+    <wsdl:part element="inp1:replyMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:portType name="get_data_ptt_GetData02_REQUEST">
+    <wsdl:operation name="get_data">
+      <wsdl:input message="tns:requestMessage"/>
+      <wsdl:output message="tns:replyMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="get_data_ptt_GetData02_REQUEST_binding" type="tns:get_data_ptt_GetData02_REQUEST">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wss_username_token_over_ssl_service_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="get_data">
+      <soap:operation soapAction="get_data"/>
+      <wsdl:input>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ihealth">
+    <wsdl:port binding="tns:get_data_ptt_GetData02_REQUEST_binding" name="get_data_ptt_GetData02_REQUEST_pt">
+      <soap:address location="https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_IH01/v01/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_IH01/v01/</con:endpoint></con:endpoints><con:operation id="a9f894ca-8612-46f6-8bc3-690c4e9a208a" isOneWay="false" action="get_data" name="get_data" bindingOperationName="get_data" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="285928db-1f98-42a3-8ca4-609f2bc0b236" name="Request 1" defaultOutgoingWss="ics_usernametoken" outgoingWss="ics_usernametoken"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_IH01/v01/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sin="http://xmlns.oracle.com/singleString">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sin:requestMessage>gero et</sin:requestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>SPNEGO/Kerberos</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes><con:authType>SPNEGO/Kerberos</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="get_data"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="96ebfb43-bd6e-482d-acd1-17c7547e50e9" wsaVersion="NONE" name="get_data_ptt_rxr_soap_ep1_REQUEST_binding" type="wsdl" bindingName="{http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth}get_data_ptt_rxr_soap_ep1_REQUEST_binding" soapVersion="1_1" anonymous="optional" definition="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_FB03/v01/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_FB03/v01/?wsdl"><con:part><con:url>https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_FB03/v01/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ihealth" targetNamespace="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:inp1="http://xmlns.oracle.com/singleString" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:AlgorithmSuite>
+          <wsp:Policy>
+            <sp:Basic128/>
+          </wsp:Policy>
+        </sp:AlgorithmSuite>
+        <sp:TransportToken>
+          <wsp:Policy>
+            <sp:HttpsToken RequireClientCertificate="false">
+              <wsp:Policy/>
+            </sp:HttpsToken>
+          </wsp:Policy>
+        </sp:TransportToken>
+        <sp:Layout>
+          <wsp:Policy>
+            <sp:Lax/>
+          </wsp:Policy>
+        </sp:Layout>
+        <sp:IncludeTimestamp/>
+      </wsp:Policy>
+    </sp:TransportBinding>
+    <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+          <wsp:Policy>
+            <sp:WssUsernameToken10/>
+          </wsp:Policy>
+        </sp:UsernameToken>
+      </wsp:Policy>
+    </sp:SupportingTokens>
+  </wsp:Policy>
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/singleString" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="requestMessage" type="string"/>
+      <element name="replyMessage" type="string"/>
+    </schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/ics/tracking/ics_tracking_context.xsd" xmlns="http://xmlns.oracle.com/ics/tracking/ics_tracking_context.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ics_tracking_context">
+        <xs:annotation>
+          <xs:documentation>ICS Tracking Context Schema</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="tracking_property" type="TrackingPropertyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="TrackingPropertyType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="requestMessage">
+    <wsdl:part element="inp1:requestMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:message name="replyMessage">
+    <wsdl:part element="inp1:replyMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:portType name="get_data_ptt_rxr_soap_ep1_REQUEST">
+    <wsdl:operation name="get_data">
+      <wsdl:input message="tns:requestMessage"/>
+      <wsdl:output message="tns:replyMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="get_data_ptt_rxr_soap_ep1_REQUEST_binding" type="tns:get_data_ptt_rxr_soap_ep1_REQUEST">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wss_username_token_over_ssl_service_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="get_data">
+      <soap:operation soapAction="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth/get_data"/>
+      <wsdl:input>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ihealth">
+    <wsdl:port binding="tns:get_data_ptt_rxr_soap_ep1_REQUEST_binding" name="get_data_ptt_rxr_soap_ep1_REQUEST_pt">
+      <soap:address location="https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_FB03/v01/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_FB03/v01/</con:endpoint></con:endpoints><con:operation id="27b76177-5b55-4128-a3c5-37b4e9e47633" isOneWay="false" action="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth/get_data" name="get_data" bindingOperationName="get_data" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5dbc1079-23df-493f-a403-bb578a18de93" name="Request 1" defaultOutgoingWss="ics_usernametoken" outgoingWss="ics_usernametoken"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_FB03/v01/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sin="http://xmlns.oracle.com/singleString">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sin:requestMessage>gero et</sin:requestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>SPNEGO/Kerberos</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes><con:authType>SPNEGO/Kerberos</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth/get_data"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:RestService" id="ee76d7e1-07cf-47e0-92bd-a76af0203b65" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://160.34.12.161" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://160.34.12.161</con:endpoint></con:endpoints><con:resource name="BloodPressure" path="/ords/pdb1/rest/health/bloodPressure" id="376432da-b8ac-4e96-b743-5ed5d6ff7920"><con:settings/><con:parameters><con:parameter><con:name>patient_id</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="BloodPressure" id="7e64f435-e70b-4074-a293-2b3f4be3a193" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:blo="https://160.34.12.161/ords/pdb1/rest/health/bloodPressure">blo:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>400 404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>multipart/form-data</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="get_data" id="bfe21a27-d861-4c08-aa7d-c021e3e3bc91" mediaType="multipart/form-data" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://160.34.12.161</con:endpoint><con:request/><con:originalUri>https://160.34.12.161/ords/pdb1/rest/health/bloodPressure</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><entry key="patient_id" value="100" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>patient_id</con:entry></con:parameterOrder></con:request><con:request name="post_data" id="bfe21a27-d861-4c08-aa7d-c021e3e3bc91" mediaType="multipart/form-data" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://160.34.12.161</con:endpoint><con:request/><con:originalUri>https://160.34.12.161/ords/pdb1/rest/health/bloodPressure</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><entry key="patient_id" value="100" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>patient_id</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" id="bc6025ab-38a0-4512-8764-cd40986a6afb" wsaVersion="NONE" name="get_data_ptt_GetData03_REQUEST_binding" type="wsdl" bindingName="{http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth}get_data_ptt_GetData03_REQUEST_binding" soapVersion="1_1" anonymous="optional" definition="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_03/v01/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_03/v01/?wsdl"><con:part><con:url>https://integration-gse00002809.integration.us2.oraclecloud.com/integration/flowsvc/soap/RXR_INTEGRATION_03/v01/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ihealth" targetNamespace="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:inp1="http://xmlns.oracle.com/singleString" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:AlgorithmSuite>
+          <wsp:Policy>
+            <sp:Basic128/>
+          </wsp:Policy>
+        </sp:AlgorithmSuite>
+        <sp:TransportToken>
+          <wsp:Policy>
+            <sp:HttpsToken RequireClientCertificate="false">
+              <wsp:Policy/>
+            </sp:HttpsToken>
+          </wsp:Policy>
+        </sp:TransportToken>
+        <sp:Layout>
+          <wsp:Policy>
+            <sp:Lax/>
+          </wsp:Policy>
+        </sp:Layout>
+        <sp:IncludeTimestamp/>
+      </wsp:Policy>
+    </sp:TransportBinding>
+    <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+      <wsp:Policy>
+        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+          <wsp:Policy>
+            <sp:WssUsernameToken10/>
+          </wsp:Policy>
+        </sp:UsernameToken>
+      </wsp:Policy>
+    </sp:SupportingTokens>
+  </wsp:Policy>
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/singleString" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="requestMessage" type="string"/>
+      <element name="replyMessage" type="string"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="requestMessage">
+    <wsdl:part element="inp1:requestMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:message name="replyMessage">
+    <wsdl:part element="inp1:replyMessage" name="part"/>
+  </wsdl:message>
+  <wsdl:portType name="get_data_ptt_GetData03_REQUEST">
+    <wsdl:operation name="get_data">
+      <wsdl:input message="tns:requestMessage"/>
+      <wsdl:output message="tns:replyMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="get_data_ptt_GetData03_REQUEST_binding" type="tns:get_data_ptt_GetData03_REQUEST">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wss_username_token_over_ssl_service_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="get_data">
+      <soap:operation soapAction="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth/get_data"/>
+      <wsdl:input>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="part" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ihealth">
+    <wsdl:port binding="tns:get_data_ptt_GetData03_REQUEST_binding" name="get_data_ptt_GetData03_REQUEST_pt">
+      <soap:address location="https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_03/v01/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_03/v01/</con:endpoint></con:endpoints><con:operation id="d4a95bbc-94be-4892-8e33-61da8b646d09" isOneWay="false" action="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth/get_data" name="get_data" bindingOperationName="get_data" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="117c9de7-0e29-4e4e-ac0e-015747c44587" name="Request 1" defaultOutgoingWss="ics_usernametoken" outgoingWss="ics_usernametoken"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://integration-gse00002809.integration.us2.oraclecloud.com:443/integration/flowsvc/soap/RXR_INTEGRATION_03/v01/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sin="http://xmlns.oracle.com/singleString">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sin:requestMessage>200</sin:requestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>SPNEGO/Kerberos</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>SPNEGO/Kerberos</con:addedBasicAuthenticationTypes><con:authType>SPNEGO/Kerberos</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com.rubiconred/ICS_WSDL_Application/WSDLs/ihealth/get_data"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="dc55f492-aa71-4a1d-86bf-1c32b5134d25" wsaVersion="200508" name="dm.hack.bp.MyHealth.Binding" type="wsdl" bindingName="{http://rubiconred.com/bp/dm.hack.MyHealth}dm.hack.bp.MyHealth.Binding" soapVersion="1_1" anonymous="optional" definition="https://process-gse00003023.process.us2.oraclecloud.com/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://process-gse00003023.process.us2.oraclecloud.com/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?WSDL"><con:part><con:url>https://process-gse00003023.process.us2.oraclecloud.com/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="dm.hack.bp.MyHealth_1.0" targetNamespace="http://rubiconred.com/bp/dm.hack.MyHealth" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bp="http://rubiconred.com/bp/dm.hack.MyHealth" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <abstractWSDL>https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0/WSDLs/http___rubiconred_com_bp_dm_hack_MyHealth/dm_hack_bp_MyHealth_1_0.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <wsp:Policy wsu:Id="wsaddr_policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://rubiconred.com/bp/dm.hack.MyHealth" schemaLocation="https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?XSD=../../Schemas/http___rubiconred_com_bp_dm_hack_MyHealth/dm_hack_bp_MyHealth_1_0.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="patientWellBeingAlert">
+    <wsdl:part name="payload" element="bp:wellBeingDataRequest"/>
+  </wsdl:message>
+  <wsdl:portType name="dm.hack.bp.MyHealth">
+    <wsdl:operation name="patientWellBeingAlert">
+      <wsdl:input message="bp:patientWellBeingAlert"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="dm.hack.bp.MyHealth.Binding" type="bp:dm.hack.bp.MyHealth">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wsaddr_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="patientWellBeingAlert">
+      <soap:operation soapAction="patientWellBeingAlert"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyHealthRef">
+    <wsdl:port name="dm.hack.bp.MyHealth_pt" binding="bp:dm.hack.bp.MyHealth.Binding">
+      <soap:address location="https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0*soa_0ddf1c47-f7e0-42fd-9aea-468e344fe9ca/MyHealthRef"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?XSD=../../Schemas/http___rubiconred_com_bp_dm_hack_MyHealth/dm_hack_bp_MyHealth_1_0.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://rubiconred.com/bp/dm.hack.MyHealth" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bp="http://rubiconred.com/bp/dm.hack.MyHealth" xmlns:td="http://rubiconred.com/dm.hack/MyHealth">
+  <xsd:import namespace="http://rubiconred.com/dm.hack/MyHealth" schemaLocation="https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?XSD=../../Schemas/http___rubiconred_com_dm_hack_MyHealth/dm_hack_MyHealth_1_0.xsd"/>
+  <xsd:element name="wellBeingDataRequest" type="bp:WellBeingDriveType">
+    <xsd:annotation>
+      <xsd:documentation>Element definition for the WellBeingDriveType type.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="wellBeingDataRequestResponse" type="bp:WellBeingDriveType">
+    <xsd:annotation>
+      <xsd:documentation>Element definition for the WellBeingDriveResponseType type.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="WellBeingDriveType">
+    <xsd:annotation>
+      <xsd:documentation>Type Definition for the wellBeingData operation.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="body">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="td:wellBeingData" minOccurs="0" maxOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0/MyHealthRef?XSD=../../Schemas/http___rubiconred_com_dm_hack_MyHealth/dm_hack_MyHealth_1_0.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://rubiconred.com/dm.hack/MyHealth" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:td="http://rubiconred.com/dm.hack/MyHealth">
+  <xsd:element name="wellBeingData" type="td:WellBeingDriveType">
+    <xsd:annotation>
+      <xsd:documentation>Root element defintion for the TestDriveRequestType complex type.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="WellBeingDriveType">
+    <xsd:annotation>
+      <xsd:documentation>The WellBeingDriveType defines the details that are captured as part of the well being reading from well being devices.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="messageId" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="clientId" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="priority" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="messageTimeStamp" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="messageType" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="messageFormat" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="severity" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="source" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="patientName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="patientAge" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="patientGender" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="patientEmail" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="patientPhoneNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="bloodPressureHigh" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="bloodPressureLow" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="pulse" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="latitude" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="longitude" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0*soa_0ddf1c47-f7e0-42fd-9aea-468e344fe9ca/MyHealthRef</con:endpoint></con:endpoints><con:operation id="73efc6c4-9a35-47c5-a003-47e3e5c63d16" isOneWay="false" action="patientWellBeingAlert" name="patientWellBeingAlert" bindingOperationName="patientWellBeingAlert" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="17cb7b4a-7504-4028-998f-e349d81f2c69" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://process-gse00003023.process.us2.oraclecloud.com:443/soa-infra/services/default/Administer_Patient_Well_Being!1.0*soa_0ddf1c47-f7e0-42fd-9aea-468e344fe9ca/MyHealthRef</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dm="http://rubiconred.com/bp/dm.hack.MyHealth" xmlns:myh="http://rubiconred.com/dm.hack/MyHealth">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dm:wellBeingDataRequest>\r
+         <dm:body>\r
+            <!--Optional:-->\r
+            <myh:wellBeingData>\r
+               <!--Optional:-->\r
+               <myh:messageId>gero et</myh:messageId>\r
+               <!--Optional:-->\r
+               <myh:clientId>sonoras imperio</myh:clientId>\r
+               <!--Optional:-->\r
+               <myh:priority>quae divum incedo</myh:priority>\r
+               <!--Optional:-->\r
+               <myh:messageTimeStamp>verrantque per auras</myh:messageTimeStamp>\r
+               <!--Optional:-->\r
+               <myh:messageType>per auras</myh:messageType>\r
+               <!--Optional:-->\r
+               <myh:messageFormat>circum claustra</myh:messageFormat>\r
+               <!--Optional:-->\r
+               <myh:description>nimborum in</myh:description>\r
+               <!--Optional:-->\r
+               <myh:severity>foedere certo</myh:severity>\r
+               <!--Optional:-->\r
+               <myh:source>profundum quippe ferant</myh:source>\r
+               <!--Optional:-->\r
+               <myh:patientName>et carcere</myh:patientName>\r
+               <!--Optional:-->\r
+               <myh:patientAge>iovis rapidum iaculata</myh:patientAge>\r
+               <!--Optional:-->\r
+               <myh:patientGender>speluncis abdidit</myh:patientGender>\r
+               <!--Optional:-->\r
+               <myh:patientEmail>bella gero et</myh:patientEmail>\r
+               <!--Optional:-->\r
+               <myh:patientPhoneNumber>flammas turbine</myh:patientPhoneNumber>\r
+               <!--Optional:-->\r
+               <myh:bloodPressureHigh>hoc metuens</myh:bloodPressureHigh>\r
+               <!--Optional:-->\r
+               <myh:bloodPressureLow>ac vinclis</myh:bloodPressureLow>\r
+               <myh:pulse>speluncis abdidit</myh:pulse>\r
+               <myh:latitude>aris imponet honorem</myh:latitude>\r
+               <myh:longitude>praeterea aut</myh:longitude>\r
+            </myh:wellBeingData>\r
+         </dm:body>\r
+      </dm:wellBeingDataRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="patientWellBeingAlert"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer><con:outgoing><con:name>ics_usernametoken</con:name><con:entry type="Username" username="cloud.admin" password="congenialShuttle8"><con:configuration><addCreated>true</addCreated><addNonce>true</addNonce><passwordType>PasswordText</passwordType></con:configuration></con:entry><con:entry type="Timestamp"><con:configuration><timeToLive>300</timeToLive><strictTimestamp>true</strictTimestamp></con:configuration></con:entry><con:usePredefinedOrder>false</con:usePredefinedOrder></con:outgoing></con:wssContainer><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>

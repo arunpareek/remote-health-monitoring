@@ -1,0 +1,138 @@
+{
+	"variables": [],
+	"info": {
+		"name": "iHealth API",
+		"_postman_id": "fe629fc7-aa98-5563-b947-91530fafdbef",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_code",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_access_token",
+			"request": {
+				"url": "http://sandboxapi.ihealthlabs.com/OpenApiV2/OAuthv2/userauthorization/?code=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L0zvGnmFvQ5Lr78DAy1trpWPdaxmPIZCC24r7xOsS0dRFq0u*Q0iKsuA3bVIKBIGqkV5ixyOV5CpMeIwgoC*JcO&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_bp",
+			"request": {
+				"url": "http://sandboxapi.ihealthlabs.com/openapiv2/user/cf4f0598329f406ba09766fb8256bb70/bp.json/?&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add_bp_data",
+			"request": {
+				"url": "http://sandboxapi.ihealthlabs.com/openapiv2/user/cf4f0598329f406ba09766fb8256bb70/bp.json/?client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6&request_type=Post&querynumber=BP_ADD01",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "DataID",
+							"value": "zzzzzzzzzzz",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "MDate",
+							"value": "2016-11-14T00:00:00",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "TimeZone",
+							"value": "+11",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "HP",
+							"value": "120",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "LP",
+							"value": "80",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "HR",
+							"value": "65",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "BPUnit",
+							"value": "default",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_bp_all_in_one",
+			"request": {
+				"url": "http://sandboxapi.ihealthlabs.com/openapiv2/user/cf4f0598329f406ba09766fb8256bb70/bp.json/?&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_bp_application",
+			"request": {
+				"url": "http://sandboxapi.ihealthlabs.com/openapiv2/user/cf4f0598329f406ba09766fb8256bb70/bp.json/?&redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&client_id=1c86ad56a7d648ba8706d4dbad12b9eb&client_secret=065c3bbf330a475894dfec3e0d09e2c9&access_token=IV558tftYyFtP1VAweBmtm0aPqa2hxI5taQOBPjr5L04oBj*ATd1gMdhHODVofZURmsusS8coTqUl7dhp5PT38Fz*BMCAOEcUrw*0r5Amgq5Felvw8C*E6-oQWckRia2eLUfQnKrwPsJZgmRKcQ0MPUqiu0mcy7aDracr8oRxvo&sc=4B6DE833745E4F1B81B779764B7B1ECD&sv=CCEF0EFD42084B64848EBF72D5B016F6",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

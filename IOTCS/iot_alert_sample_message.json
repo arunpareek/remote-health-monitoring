@@ -1,0 +1,39 @@
+[{
+		"id": "3ebec8be-1911-4e66-89f6-8a721a1d4068",
+		"clientId": "93aee622-0dbb-4cc4-9cb8-aba21bb96ef5",
+		"source": "$UBSYS-2",
+		"destination": "",
+		"priority": "HIGHEST",
+		"reliability": "BEST_EFFORT",
+		"eventTime": 1480244637609,
+		"sender": "",
+		"type": "ALERT",
+		"properties": {},
+		"direction": "FROM_IOTCS",
+		"receivedTime": 1480244637609,
+		"sentTime": 1480244637681,
+		"payload": {
+			"format": "urn:oracle:iot:exploration:CriticalBloodPressure",
+			"description": "Alert created from exploration",
+			"severity": "CRITICAL",
+			"data": {
+				"$(source)_id": "$UBSYS-2",
+				"msg_source": "AAAAAAR8RMSA-CA",
+				"latitude": -37.817,
+				"msg_destination": "",
+				"msgid": "9227597d-4660-4e4a-bc8f-bf7a49b48923",
+				"eventtime": 1.48024463060499994E18,
+				"priority": "MEDIUM",
+				"patientname": "Arun Pareek",
+				"pressurehigh": 190.0,
+				"pulse": 50.0,
+				"patientage": 32.0,
+				"patientgender": "Male",
+				"source_id": "AAAAAAR8RMSA-CA",
+				"pressurelow": 70.0,
+				"msg_sender": "",
+				"longitude": 144.946
+			}
+		}
+	}
+]

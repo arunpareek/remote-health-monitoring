@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Fitbit API",
+		"_postman_id": "9fbfe9f5-cc0c-2465-2bbf-754dd6d56e34",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get heart rate",
+			"request": {
+				"url": "https://api.fitbit.com/1/user/-/activities/heart/date/2016-10-01/1d.json",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Mk4zN00iLCJhdWQiOiIyMjdYOUQiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyaHIiLCJleHAiOjE0NzkxOTk1ODAsImlhdCI6MTQ3OTE3MDc4MH0.dYcIgOv3n66mMunr23GAGhJR_GdKZbmqnROAYX02SPk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

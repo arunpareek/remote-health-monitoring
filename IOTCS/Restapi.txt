@@ -1,0 +1,58 @@
+Arun,
+
+Just to understand....
+
+- It looks like you successfully registered and activated the device through the APIs.
+- It looks like this is a directly connected device, not using a gateway.
+- It looks like you successfully sent messages from the device TO IoT.
+
+So the issue is trying to go through IoT CS to send a message TO the device?  Because it looks like you are trying to send a message FROM the device.
+
+Is there a reason you are using the v1/messages API rather than v2?
+
+Are you wanting to do all this low-level coding or are you just trying to get it to work?  I have some very simple NodeJS code which creates/registers/activates a new device and sends to any given data urn with just a few lines of node code...  Using the Java or Node libraries are a bit easier than sorting out all the rest calls IMHO. :-)
+
+E.g. Node code to register/activate device:
+-------------
+var IoTServer = require('jsclient/iot');
+
+var iot = new IoTServer('https://iot-gse00002944.iot.us.oraclecloud.com');
+iot.setPrincipal("cloud.admin", "upstageTimber9!");
+
+var metadata = {
+};
+var result = iot.createDevice('upstageTimber9!', 'Anki Car Data', 'DIRECTLY_CONNECTED_DEVICE', metadata)
+ .then(function(device) {
+   console.log('Device', device.getID(), 'created, now activating...');
+   return device.activate();
+});
+
+console.log("Result: ", result)
+-------------
+
+Code to send a message:
+-------
+// setup the device
+
+var IoTServer = require('jsclient/iot');
+
+var iot = new IoTServer(iotServerUrl);
+iot.setPrincipal(iotUsername, iotPassword);
+var mydevice = null;
+iot.getDevice(iotDeviceID, iotDevicePassword).then(function(device) {
+ console.log("Got device: "+iotDeviceID);
+ mydevice = device;
+});
+
+---
+// later, send message
+mydevice.sendDataMessages(urn, body).then(function(response) {
+   console.log("Sent msg to urn: "+\urn);
+ })
+
+// send alert
+mydevice.sendAlerts(urn,title,severity,body).then(function(response) {
+   console.log("Sent alert to urn: "+urn);
+ })
+---------
+https://iottrial2608-iotpartner.iot.us.oraclecloud.com/ui/?root=applicationID&applicationID=AAAAAASETF8A-A4&applicationPageAAAAAASETF8A-A4=app_dashboard

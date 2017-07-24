@@ -1,0 +1,10 @@
+{"APIName":"OpenApiBP",
+"AccessToken":"51Ja*rI0yWcTx-85HXOXVi*5ZlGK8lCzgId4LdT*2-GI6iazYMWCEshefHFGLOS-X*g17SRlDLIsh6MpsWx7BWDLP4AB3Nz09dSY1rkk7WoxaQg0PDWtb2eAERwVsPWMObpNrYcd3Wsk5vxQZuaHi1tn4b-gSvPSDgIj24zVUBclChpkUVej2DTwNtYC2sNKd9NqNZwE-2z7679FES2viQ",
+"Expires":3672000,
+"RefreshToken":"51Ja*rI0yWcTx-85HXOXVi*5ZlGK8lCzgId4LdT*2-GI6iazYMWCEshefHFGLOS-X*g17SRlDLIsh6MpsWx7BSiqqDuUEbKA2jjtlDyWTj-D3IQx-wZY7X1eo8W4lZTmfxqVLEq030HHKi-Vk9YySILPuN*7mSve9NVIf75JfsWCFy0xsKHR*2oMQUGrFxf*X6oK*SlCjxOv86GnjBH0uA",
+"RefreshTokenExpires":31536000,
+"UUID":"",
+"UserID":"87a370062ace417e892d81254344eaf3",
+"UserOpenID":"87a370062ace417e892d81254344eaf3",
+"UserRegion":"https:\/\/api.ihealthlabs.com:8443",
+"client_para":""}

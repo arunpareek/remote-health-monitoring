@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F042F303-D651-01A1-E1B1-F6E0CDAB4824" name="blood_pressure">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:40:59 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="reading_id" id="977BB0E9-DAFD-6D62-1DF4-129236FA93AB">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:41:08 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="systolic" id="48239005-7A27-ABA5-AF7B-B74AAED54C3B">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:41:34 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute name="diastolic" id="DB0D5B29-04F8-6AF8-1421-509838D3DD07">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:46:32 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute name="heart_rate" id="CD04BAAE-2855-5B00-7341-4464CEC30DC5">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:46:53 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Attribute>
+<Attribute name="measured_dt" id="323AD6D0-E15E-368A-05EC-610252B5F5FD">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:47:04 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+</Attribute>
+<Attribute name="measured_by" id="EDDC4557-5561-B6F6-65E3-525650E5875C">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:47:48 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="patient_id" id="76DF23BC-CE26-251A-62B6-1E02D57E832E">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:48:11 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B930E252-D2E9-B927-DDB7-9FC9BCD28FD8" name="blood_pressure PK">
+<createdBy>Sunil Jacob</createdBy>
+<createdTime>2016-11-14 01:46:30 UTC</createdTime>
+<ownerDesignName>data_model</ownerDesignName>
+<engineerTo>
+<item key="B4710B57-1C9A-BE64-F82A-FC341E9BC86D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>977BB0E9-DAFD-6D62-1DF4-129236FA93AB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

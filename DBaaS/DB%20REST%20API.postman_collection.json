@@ -1,0 +1,70 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DB REST API",
+		"_postman_id": "39686d01-a87b-1355-917f-c57614baa85d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_bp",
+			"request": {
+				"url": "https://160.34.12.161/ords/pdb1/rest/health/bloodPressure",
+				"method": "GET",
+				"header": [
+					{
+						"key": "patient_id",
+						"value": "200",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post_bp",
+			"request": {
+				"url": "http://160.34.12.161/ords/pdb1/rest/health/bloodPressure",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "patient_id",
+							"value": "200",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "systolic",
+							"value": "135",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "diastolic",
+							"value": "95",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
